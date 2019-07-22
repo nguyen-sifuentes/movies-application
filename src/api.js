@@ -4,7 +4,7 @@ module.exports = {
       .then(response => response.json())
   },
 
-  addMovie: () =>{
+  addMovie: (title, rating) =>{
     const movie = {title: title, rating: rating};
     const options = {
       method: 'POST',
@@ -15,6 +15,7 @@ module.exports = {
     };
    return fetch('/api/movies', options)
 
-  }
+  },
 
 };
+
