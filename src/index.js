@@ -9,13 +9,14 @@ sayHello('World');
  */
 const {getMovies} = require('./api.js');
 
+$('#moreStuff').html(`<h2>Here are all the movies: </h2>`);
 getMovies().then((movies) => {
-  $('#moreStuff').html(`<div>Here are all the movies: </div>`);
   movies.forEach(({title, rating, id}) => {
-
-    $('#movieStuff').html(`id#${id} - ${title} - rating: ${rating}`);
+    $('#movieStuff').append(`<p>id#${id} - ${title} - rating: ${rating}</p>`);
   });
 }).catch((error) => {
   alert('Oh no! Something went wrong.\nCheck the console for details.');
   console.log(error);
 });
+
+$('#stuff').append(`<option> here is our options</option>`);
