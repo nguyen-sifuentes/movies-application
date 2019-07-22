@@ -8,11 +8,8 @@
 
 </head>
 <body>
-<!--<video autoplay id="myVideo" loop muted>-->
-<!--    <source src="movie.mp4" type="video/mp4">-->
-<!--</video>-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">Fletnix</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -23,11 +20,11 @@
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">Showings</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
+                    Find Tickets
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#">Action</a>
@@ -37,7 +34,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
+                <a class="nav-link disabled" href="#">Coming Soon</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -50,14 +47,17 @@
 <div class="row">
     <div class="column col-2"></div>
     <div class="container column col-8">
-        <h1 class="text-align-center">Hello There!</h1>
+        <video autoplay id="myVideo" loop muted>
+            <source src="Burning.mp4" type="video/mp4">
+        </video>
+        <h1 class="text-align-center">Our Movie Database: </h1>
         <div id="moreStuff"></div>
         <div id="movieStuff"><img src="loading.gif">
         </div>
         <form>
-            <h3>Enter Movie</h3>
-            <label for="title">Enter Title</label>
-            <input type="text" id="title" placeholder="Suggest">
+            <h3>Edit Library: </h3>
+            <label for="title">Enter Title: </label>
+            <input type="text" id="title" placeholder="Title goes here...">
             <label for="rating">Rate It: </label>
             <select name=“rating” id="rating">
                 <option value="1">1</option>
@@ -70,10 +70,10 @@
         </form>
         <br>
         <form>
-            <label for="deleteMoviesSelect">Delete a movie</label>
+            <label for="deleteMoviesSelect">Delete a movie: </label>
             <select name="deleteMovies" id="deleteMoviesSelect">
             </select>
-            <button id="deleteSubmit" class="btn btn-danger">Submit</button>
+            <button id="deleteSubmit" class="btn btn-danger">Delete</button>
         </form>
     </div>
     <div class="column col-2"></div>

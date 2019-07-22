@@ -8,18 +8,20 @@ body {
     position: relative;
     text-align: center;
     color: white;
+    bottom: 3em;
     padding-left: 50px;
     padding-right: 50px;
-    padding-top: 35px;
+    padding-top: 80px;
 }
-/*#myVideo {*/
-/*    position: fixed;*/
-/*    top: 50%;*/
-/*    left: 50%;*/
-/*    width: 1700px;*/
-/*    height: 800px;*/
-/*    z-index: -100;*/
-/*    transform: translate(-50%, -50%);*/
+#myVideo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: 800px;
+    z-index: -100;
+    transform: translate(-50%, -48%);
+}
 
 #topbar{
     height: 100px;

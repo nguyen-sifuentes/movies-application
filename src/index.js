@@ -20,7 +20,7 @@ $('#deleteSubmit').on('click', function (e) {
     loaded();
 });
 function loaded() {
-    $('#moreStuff').html(`<div>Here are all the movies: </div>`);
+    $('#moreStuff').html('');
   getMovies().then((movies) => {
     $('#movieStuff').html('');
     let movie = '';
