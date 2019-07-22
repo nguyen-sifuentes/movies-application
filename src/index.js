@@ -31,7 +31,7 @@ function loaded() {
     $('#movieStuff').html('');
     let movie = '';
     movies.forEach(({title, rating, id}) => {
-      movie += `<div> id#${id} - ${title} - rating: ${rating}</div>`;
+      movie += `<div>${title} - rating: ${rating}</div>`;
     });
     $(movie).appendTo('#movieStuff');
 
