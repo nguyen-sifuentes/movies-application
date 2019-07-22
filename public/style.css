@@ -1,25 +1,26 @@
-html, body {
-    height: 100%;
-    margin: 0;
+body {
+    background-color: white;
+    background-image: url("background.jpg");
+    background-size: 1450px 800px;
 }
 
 .container {
     position: relative;
-    top: 50%;
-    transform: translateY(-100%);
     text-align: center;
-}
-#myVideo {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 1700px;
-    height: 800px;
-    z-index: -100;
-    transform: translate(-50%, -50%);
-}
-
-.container {
-    background-color: rgba(43, 43, 43, .7);
     color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 35px;
+}
+/*#myVideo {*/
+/*    position: fixed;*/
+/*    top: 50%;*/
+/*    left: 50%;*/
+/*    width: 1700px;*/
+/*    height: 800px;*/
+/*    z-index: -100;*/
+/*    transform: translate(-50%, -50%);*/
+
+#topbar{
+    height: 100px;
 }

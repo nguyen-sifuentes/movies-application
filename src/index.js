@@ -25,7 +25,7 @@ function loaded() {
     $('#movieStuff').html('');
     let movie = '';
     movies.forEach(({title, rating, id}) => {
-      movie += `<div class="text-justify">${title}</div><div class="text-justify">${rating} stars</div>`;
+      movie += `<div class="text-align-center">${title}</div><div class="text-align-center">${rating} stars</div>`;
     });
     $(movie).appendTo('#movieStuff');
 
