@@ -8,13 +8,24 @@
 <body>
     <div class="container">
         <div id="moreStuff"></div>
-        <div id="movieStuff"></div>
+        <div id="movieStuff">loading...
+        </div>
         <h1>Hello There!</h1>
         <p>To get started, edit <code>src/index.js</code>.</p>
+        <form>
+            <h3>Enter Movie</h3>
+            <input type="text" id="title" placeholder="Suggest">
+            <input type="text" id="rating" placeholder="Suggest">
+            <button id="userSubmit">submit</button>
+        </form>
+        <form>
+            <label for="deleteMoviesSelect">Delete a movie</label>
+            <select name="deleteMovies" id="deleteMoviesSelect">
+            </select>
+            <button id="deleteSubmit">Submit</button>
+        </form>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./main.js"></script>
 </body>
 </html>
 
-<!-- http://localhost:1313/ -->
