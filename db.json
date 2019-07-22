@@ -11,24 +11,9 @@
       "id": 2
     },
     {
-      "title": "stuff",
-      "rating": "3.5",
+      "title": "casablanca",
+      "rating": "3",
       "id": 3
-    },
-    {
-      "title": "big stuff",
-      "rating": "4.5",
-      "id": 4
-    },
-    {
-      "title": "fool",
-      "rating": "adf",
-      "id": 7
-    },
-    {
-      "title": "aafe",
-      "rating": "wergersgdsf",
-      "id": 8
     }
   ]
 }

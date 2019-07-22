@@ -11,22 +11,23 @@
 <video autoplay id="myVideo" loop muted>
     <source src="movie.mp4" type="video/mp4">
 </video>
+<div class="navbar fixed-left"></div>
     <div class="container">
+        <h1 class="text-justify mx-auto">Hello There!</h1>
         <div id="moreStuff"></div>
         <div id="movieStuff">loading...
         </div>
-        <h1>Hello There!</h1>
         <form>
             <h3>Enter Movie</h3>
             <label for="title">Enter Title</label>
             <input type="text" id="title" placeholder="Suggest">
             <label for="rating">Rate It: </label>
             <select name=“rating” id="rating">
-                <option value=“1”>1</option>
-                <option value=“2">2</option>
-                <option value=“3”>3</option>
-                <option value=“4">4</option>
-                <option value=“5”>5</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
             </select>
             <button id="userSubmit">submit</button>
         </form>
