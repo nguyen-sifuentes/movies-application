@@ -7,8 +7,22 @@ sayHello('World');
 /**
  * require style imports
  */
-const {getMovies,addMovie} = require('./api.js');
+const {getMovies,addMovie,deleteMovie} = require('./api.js');
 const $ = require("jquery");
+
+
+$('#deleteSubmit').on('click', function (e) {
+    e.preventDefault()
+    console.log(e);
+    console.log('clicking delete button');
+    let typeMovieId = $('#deleteMoviesSelect').find(":selected").val();
+    console.log(typeMovieId);
+    deleteMovie(typeMovieId);
+    loaded();
+
+});
+
+
 
 
 function loaded() {
@@ -23,11 +37,15 @@ function loaded() {
 
       $('#deleteMoviesSelect').html ("");
       let movieDelete = "<option>pick a movie to delete</option>";
-      movies.forEach(({title, rating, id}) => {
-          movieDelete +=`<option value="${title}">${title}</option>`;
+      movies.forEach(({title, id}) => {
+          movieDelete +=`<option value="${id}">${id}: ${title}</option>`;
       });
-      console.log(movieDelete);
+      // console.log(movieDelete);
       $('#deleteMoviesSelect').html(movieDelete).then($("#deleteSubmit").removeAttr("disabled"))
+
+
+
+
 
   }).catch((error) => {
     console.log(error);
@@ -49,7 +67,24 @@ loaded();
 
  });
 
-let deleteMovieData;
+// var e = document.getElementById("ddlViewBy");
+//     let strUser = typeMovieId.options[typeMovieId.selectedIndex].value;
+// $('#deleteSubmit').click((e)=> {
+//     console.log(e);
+//     e.preventDefault();
+//     console.log('clicking delete button');
+//     let typeMovieId = $('#deleteMoviesSelect').find(":selected").val();
+//     console.log(typeMovieId);
+//     // let typeMovieRating= $('#rating').val();
+//     // deleteMovie(typeMovieId).then((response)=>{
+//     //     loaded()
+//     // });
+//     // console.log("movie add")
+// }).catch(()=> {
+//     console.log("error")
+
+// });
+// let deleteMovieData;
 
 // const deleteMovies = () =>
 //         console.log('deleteMoviesFunction');
@@ -74,31 +109,31 @@ let deleteMovieData;
 
 
 //Deletes a movie on submit
-$('#deleteSubmit').click(function (e) {
-    e.preventDefault();
-    getMovies().then((movieData) => {
-        movieData.forEach(({title, rating, id}) => {
-            if(deleteMovieData===title){
-                const userMovies = {
-                    title: title,
-                    rating: rating
-                };
-                const url = '/api/movies/'+id;
-                const options = {
-                    method: 'DELETE',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(userMovies)
-                };
-                fetch(url, options)
-                    .then(movies)
-                    .then(editMovies)
-                    .then(deleteMovies);
-            }
-        });
-    });
-});
-
-// deleteMovies();
+// $('#deleteSubmit').click(function (e) {
+//     e.preventDefault();
+//     getMovies().then((movieData) => {
+//         movieData.forEach(({title, rating, id}) => {
+//             if(deleteMovieData===title){
+//                 const userMovies = {
+//                     title: title,
+//                     rating: rating
+//                 };
+//                 const url = '/api/movies/'+id;
+//                 const options = {
+//                     method: 'DELETE',
+//                     headers: {
+//                         'Content-Type': 'application/json'
+//                     },
+//                     body: JSON.stringify(userMovies)
+//                 };
+//                 fetch(url, options)
+//                     .then(movies)
+//                     .then(editMovies)
+//                     .then(deleteMovies);
+//             }
+//         });
+//     });
+// });
+//
+// // deleteMovies();
 

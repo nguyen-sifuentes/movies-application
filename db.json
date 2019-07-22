@@ -11,29 +11,24 @@
       "id": 2
     },
     {
-      "title": {},
-      "rating": {},
+      "title": "stuff",
+      "rating": "3.5",
       "id": 3
     },
     {
-      "title": {},
-      "rating": {},
+      "title": "big stuff",
+      "rating": "4.5",
       "id": 4
-    },
-    {
-      "title": "fool",
-      "rating": "4",
-      "id": 5
-    },
-    {
-      "title": "hgjh",
-      "rating": "jhjh",
-      "id": 6
     },
     {
       "title": "fool",
       "rating": "adf",
       "id": 7
+    },
+    {
+      "title": "aafe",
+      "rating": "wergersgdsf",
+      "id": 8
     }
   ]
 }
