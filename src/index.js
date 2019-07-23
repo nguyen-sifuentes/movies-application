@@ -7,7 +7,7 @@ sayHello('World');
 /**
  * require style imports
  */
-const {getMovies,addMovie,deleteMovie} = require('./api.js');
+const {getMovies,addMovie,deleteMovie,adjustMovie} = require('./api.js');
 const $ = require("jquery");
 
 $('#deleteSubmit').on('click', function (e) {
@@ -19,37 +19,48 @@ $('#deleteSubmit').on('click', function (e) {
     deleteMovie(typeMovieId);
     loaded();
 });
+$('#makeChange').on('click', (e) => {
+    e.preventDefault();
+    console.log('pressing the button');
+    let fixMovie = $('#adjustMovie').find(":selected").val();
+    console.log(fixMovie);
+    let newRating = $('#fixRating').find(":selected").val();
+    let newName = $('#fixName').val();
+    adjustMovie(newName,newRating, fixMovie);
+    loaded();
+});
 function loaded() {
-    $('#moreStuff').html('');
-  getMovies().then((movies) => {
-    $('#movieStuff').html('');
-    let movie = '';
-    movies.forEach(({title, rating, id}) => {
-      movie += `<div class="text-align-center">${title} - ${rating} ✩</div>`;
+    $('#moreStuff').html(`<div>Here are all the movies: </div>`);
+
+    getMovies().then((movies) => {
+
+        $('#movieStuff').html('');
+        let movie = '';
+        movies.forEach(({title, rating, id}) => {
+            movie += `<div class="text-align-center"">${title} -${rating} ✫</div>`;
+        });
+        $(movie).appendTo('#movieStuff');
+
+
+        $('#adjustMovie').html("");
+        let fixMovie = "<option>pick a movie to edit</option>";
+        movies.forEach(({title, id}) => {
+            fixMovie +=`<option value="${id}">${id}: ${title}</option>`;
+        });
+        $('#adjustMovie').html(fixMovie);
+
+
+        $('#deleteMoviesSelect').html ("");
+        let movieDelete = "<option>pick a movie to delete</option>";
+        movies.forEach(({title, id}) => {
+            movieDelete +=`<option value="${id}">${id}: ${title}</option>`;
+        });
+        $('#deleteMoviesSelect').html(movieDelete).then($("#deleteSubmit").removeAttr("disabled"))
+
+
+    }).catch(() => {
+        console.log('error');
     });
-    $(movie).appendTo('#movieStuff');
-
-      $('#deleteMoviesSelect').html ("");
-      let movieDelete = "<option>pick a movie to delete</option>";
-      movies.forEach(({title, id}) => {
-          movieDelete +=`<option value="${id}">${id}: ${title}</option>`;
-      });
-      // console.log(movieDelete);
-      $('#deleteMoviesSelect').html(movieDelete).then($("#deleteSubmit").removeAttr("disabled"))
-
-      $('#editMoviesSelect').html ("");
-      let movieEdit = "<option>pick a movie to change</option>";
-      movies.forEach(({title, id}) => {
-          movieEdit +=`<option value="${id}">${id}: ${title}</option>`;
-      });
-      // console.log(movieDelete);
-      $('#editMoviesSelect').html(movieEdit).then($("#editSubmit").removeAttr("disabled"))
-
-  }).catch((error) => {
-    console.log(error);
-  });
-
-
 }
 loaded();
 
@@ -66,20 +77,3 @@ loaded();
 
  });
 
-$('#adjustMovie').html("");
-let fixMovie = "<option>pick a movie to edit</option>";
-movies.forEach(({title, id}) => {
-    fixMovie +=`<option value="${id}">${id}: ${title}</option>`;
-});
-$('#adjustMovie').html(fixMovie);
-
-$('#makeChange').on('click', (e) => {
-    e.preventDefault();
-    console.log('pressing the button');
-    let fixMovie = $('#adjustMovie').find(":selected").val();
-    console.log(fixMovie);
-    let newRating = $('#fixRating').find(":selected").val();
-    let newName = $('#fixName').val();
-    adjustMovie(newName,newRating, fixMovie);
-    loaded();
-});
