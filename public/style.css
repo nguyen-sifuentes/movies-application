@@ -4,15 +4,25 @@ body {
     background-size: 1450px 800px;
 }
 
-.container {
+.container-top {
     position: relative;
     text-align: center;
     color: white;
+    top: 1em;
     bottom: 3em;
     padding-left: 50px;
     padding-right: 50px;
-    padding-top: 80px;
+    padding-top: 100px;
+}.container {
+    position: relative;
+    text-align: center;
+    color: white;
+    bottom: 4em;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 100px;
 }
+
 #myVideo {
     position: fixed;
     top: 50%;
@@ -20,7 +30,7 @@ body {
     width: 800px;
     height: 800px;
     z-index: -100;
-    transform: translate(-58%, -48%);
+    transform: translate(-45%, -44%);
 }
 
 #topbar{

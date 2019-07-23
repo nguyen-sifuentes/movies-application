@@ -36,14 +36,14 @@ function loaded() {
 
         $('#movieStuff').html('');
         let movie = '';
-        movies.forEach(({title, rating, id}) => {
-            movie += `<div class="text-align-center"">${title} -${rating} ✫</div>`;
+        movies.forEach(({title, rating, genre, id}) => {
+            movie += `<div class="text-align-center"">${title} - ${genre} -${rating} ✫</div>`;
         });
         $(movie).appendTo('#movieStuff');
 
 
         $('#adjustMovie').html("");
-        let fixMovie = "<option>pick a movie to edit</option>";
+        let fixMovie = "<option>edit movie...</option>";
         movies.forEach(({title, id}) => {
             fixMovie +=`<option value="${id}">${id}: ${title}</option>`;
         });
@@ -68,8 +68,9 @@ loaded();
  $('#userSubmit').click(()=> {
    let typeMovieTitle= $('#title').val();
    let typeMovieRating= $('#rating').val();
-   addMovie(typeMovieTitle, typeMovieRating).then((response)=>{
-     loaded()
+   let movieGenre = $('#genre').find(":selected").val();
+   addMovie(typeMovieTitle, typeMovieRating,movieGenre).then((response)=>{
+     loaded();
   });
   console.log("movie add")
   }).catch(()=> {

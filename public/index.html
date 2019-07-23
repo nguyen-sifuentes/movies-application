@@ -43,10 +43,9 @@
         </form>
     </div>
 </nav>
-<div id="topbar"></div>
-<div class="row">
+<div class="row container-top">
     <div class="column col-2"></div>
-    <div class="container column col-7">
+    <div class='column col-7'>
         <video autoplay id="myVideo" loop muted>
             <source src="Burning.mp4" type="video/mp4">
         </video>
@@ -54,10 +53,33 @@
         <div id="moreStuff"></div>
         <div id="movieStuff"><img src="loading.gif">
         </div>
+    </div>
+        <div class="column col-3">
+            <!-- Begin scrolling vertical text  -->
+            <!div; text-align:left; background: #FFFFFF; padding: 0px;">
+            <marquee width="300px" onmouseover='this.stop();' onmouseout='this.start();' direction="up" height="125" scrollamount="2">
+            <div id="picture scroll"> <a href="http://www.marvel.com" rel="nofollow" target="_blank"> <img src="star.jpg" width="125" height="125" alt="scrolling vertical image marquee" /> </a></div>
+            <div class="picture scroll"><br/><a href="http:/www.marvel.com" target="_blank"><img src="mission.jpeg" width="125" height="125"></a></div>
+            <div class="picture scroll"><br/><a href="http:/www.marvel.com" target="_blank"><img src="300.png" width="125" height="125"></a></div>
+            <div class="picture scroll"><br/><a href="http:/www.marvel.com" target="_blank"><img src="wolverine.jpg" width="125" height="125"></a></div>
+            <div class="picture scroll"><br/><a href="http:/www.marvel.com" target="_blank"><img src="terminator.jpg" width="125" height="125"></a></div>
+        </marquee>
+        </div>
+    </div>
+<div class="row container">
+    <div class="column col-4"></div>
+    <div class="column col-8">
         <form>
             <h3>Edit Library: </h3>
             <label for="title">Enter Title: </label>
             <input type="text" id="title" placeholder="Title goes here...">
+            <label for="genre">Genre: </label>
+            <select name="genre" id="genre">
+                <option value="sci-fi">Sci-Fi</option>
+                <option value="action">Action</option>
+                <option value="comedy">Comedy</option>
+                <option value="romance">Romance</option>
+            </select>
             <label for="rating">Rate It: </label>
             <select name=“rating” id="rating">
                 <option value="1">1</option>
@@ -71,10 +93,17 @@
         <br>
         <form>
             <label for="adjustMovie">Fix It: </label>
-            <select name="adjust" id="adjustMovie">select a movie to adjust:
+            <select name="adjust" id="adjustMovie">
             </select>
             <label for="fixName"></label>
             <input id="fixName" type="text" placeholder="Edit Name...">
+            <label for="fixGenre">Genre: </label>
+            <select name="fixGenre" id="fixGenre">
+                <option value="sci-fi">Sci-Fi</option>
+                <option value="action">Action</option>
+                <option value="comedy">Comedy</option>
+                <option value="romance">Romance</option>
+            </select>
             <label for="fixRating">New Rating: </label>
             <select name=“rating” id="fixRating">
                 <option value="1">1</option>
@@ -92,19 +121,6 @@
             </select>
             <button id="deleteSubmit" class="btn btn-danger">Delete</button>
         </form>
-    </div>
-    <div class="column col-1 scroll">
-        <!-- Begin scrolling vertical text  -->
-        <!div; text-align:left; background: #FFFFFF; padding: 0px;">
-        <marquee width="300px" onmouseover='this.stop();' onmouseout='this.start();' direction="up" height="125" scrollamount="2">
-            <div id="picture scroll"> <a href="http://www.marvel.com" rel="nofollow" target="_blank"> <img src="star.jpg" width="125" height="125" alt="scrolling vertical image marquee" /> </a></div>
-            <div class="picture scroll"><br/><a href="http:/www.marvel.com" target="_blank"><img src="mission.jpeg" width="125" height="125"></a></div>
-            <div class="picture scroll"><br/><a href="http:/www.marvel.com" target="_blank"><img src="300.png" width="125" height="125"></a></div>
-            <div class="picture scroll"><br/><a href="http:/www.marvel.com" target="_blank"><img src="wolverine.jpg" width="125" height="125"></a></div>
-            <div class="picture scroll"><br/><a href="http:/www.marvel.com" target="_blank"><img src="terminator.jpg" width="125" height="125"></a></div>
-        </marquee>
-    </div>
-    <div class="column col-2">
     </div>
     <!-- Scrolling vertical text end  --></div>
 </div>
