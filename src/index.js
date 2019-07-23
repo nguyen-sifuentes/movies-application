@@ -21,12 +21,11 @@ $('#deleteSubmit').on('click', function (e) {
 });
 $('#makeChange').on('click', (e) => {
     e.preventDefault();
-    console.log('pressing the button');
     let fixMovie = $('#adjustMovie').find(":selected").val();
-    console.log(fixMovie);
     let newRating = $('#fixRating').find(":selected").val();
+    let newGenre = $('#fixGenre').find(":selected").val();
     let newName = $('#fixName').val();
-    adjustMovie(newName,newRating, fixMovie);
+    adjustMovie(newName,newRating, newGenre, fixMovie);
     loaded();
 });
 function loaded() {

@@ -13,11 +13,12 @@ body {
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 100px;
-}.container {
+}
+.container {
     position: relative;
     text-align: center;
     color: white;
-    bottom: 4em;
+    bottom: 5em;
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 100px;
