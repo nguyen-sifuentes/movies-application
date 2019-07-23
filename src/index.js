@@ -37,11 +37,23 @@ function loaded() {
       // console.log(movieDelete);
       $('#deleteMoviesSelect').html(movieDelete).then($("#deleteSubmit").removeAttr("disabled"))
 
+      $('#editMoviesSelect').html ("");
+      let movieEdit = "<option>pick a movie to change</option>";
+      movies.forEach(({title, id}) => {
+          movieEdit +=`<option value="${id}">${id}: ${title}</option>`;
+      });
+      // console.log(movieDelete);
+      $('#editMoviesSelect').html(movieEdit).then($("#editSubmit").removeAttr("disabled"))
+
   }).catch((error) => {
     console.log(error);
   });
+
+
 }
 loaded();
+
+
  $('#userSubmit').click(()=> {
    let typeMovieTitle= $('#title').val();
    let typeMovieRating= $('#rating').val();
@@ -53,3 +65,14 @@ loaded();
    console.log("error")
 
  });
+
+$('#editSubmit').click(()=> {
+    let typeMovieRating= $('#editRating').val();
+    editMovie(typeMovieRating).then((response)=>{
+        loaded()
+    });
+    console.log("movie edit")
+}).catch(()=> {
+    console.log("error")
+
+});

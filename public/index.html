@@ -46,7 +46,7 @@
 <div id="topbar"></div>
 <div class="row">
     <div class="column col-2"></div>
-    <div class="container column col-8">
+    <div class="container column col-7">
         <video autoplay id="myVideo" loop muted>
             <source src="Burning.mp4" type="video/mp4">
         </video>
@@ -70,13 +70,40 @@
         </form>
         <br>
         <form>
+            <label for="editMoviesSelect">Change movie rating: </label>
+            <select name="editMovies" id="editMoviesSelect">
+            </select>
+            <label for="editRating">Rate It: </label>
+            <select name=“editRating” id="editRating">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <button id="editSubmit" class="btn btn-danger">Change</button>
+        </form>
+        <br>
+        <form>
             <label for="deleteMoviesSelect">Delete a movie: </label>
             <select name="deleteMovies" id="deleteMoviesSelect">
             </select>
             <button id="deleteSubmit" class="btn btn-danger">Delete</button>
         </form>
     </div>
-    <div class="column col-2"></div>
+    <div class="column col-1 scroll">
+        <!-- Begin scrolling vertical text  -->
+        <!div style="width: 125px; height: 800px; text-align:left; background: #FFFFFF; padding: 0px;">
+        <marquee onmouseover='this.stop();' onmouseout='this.start();' direction="up" height="125" scrollamount="2">
+            <div id="picture scroll"> <a href="http://www.greengeeks.com/" rel="nofollow" target="_blank"> <img src="star.jpg" width="125" height="125" alt="scrolling vertical image marquee" /> </a></div>
+            <div class="picture scroll"><br/><a href="http://www.kqzyfj.com/click-5065041-11036243" rel="nofollow" target="_blank"><img src="mission.jpeg" width="125" height="125"></a></div>
+            <div class="picture scroll"><br/><a href="http://www.kqzyfj.com/click-5065041-11036243" rel="nofollow" target="_blank"><img src="300.png" width="125" height="125"></a></div>
+            <div class="picture scroll"><br/><a href="http://www.kqzyfj.com/click-5065041-11036243" rel="nofollow" target="_blank"><img src="terminator.jpg" width="125" height="125"></a></div>
+        </marquee>
+    </div>
+    <div class="column col-2">
+    </div>
+    <!-- Scrolling vertical text end  --></div>
 </div>
     <script src="./main.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
