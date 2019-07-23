@@ -10,6 +10,8 @@ sayHello('World');
 const {getMovies,addMovie,deleteMovie,adjustMovie} = require('./api.js');
 const $ = require("jquery");
 
+//our delete button
+
 $('#deleteSubmit').on('click', function (e) {
     e.preventDefault();
     console.log(e);
@@ -19,6 +21,9 @@ $('#deleteSubmit').on('click', function (e) {
     deleteMovie(typeMovieId);
     loaded();
 });
+
+//our edit button
+
 $('#makeChange').on('click', (e) => {
     e.preventDefault();
     let fixMovie = $('#adjustMovie').find(":selected").val();
@@ -28,11 +33,14 @@ $('#makeChange').on('click', (e) => {
     adjustMovie(newName,newRating, newGenre, fixMovie);
     loaded();
 });
+
+//our initial load of movies
+
 function loaded() {
     $('#moreStuff').html(`<div>Here are all the movies: </div>`);
 
     getMovies().then((movies) => {
-
+        //where we put the loaded movies
         $('#movieStuff').html('');
         let movie = '';
         movies.forEach(({title, rating, genre, id}) => {
@@ -63,6 +71,7 @@ function loaded() {
 }
 loaded();
 
+//our submit button
 
  $('#userSubmit').click(()=> {
    let typeMovieTitle= $('#title').val();
