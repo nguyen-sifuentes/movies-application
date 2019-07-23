@@ -20,7 +20,7 @@ body {
     width: 800px;
     height: 800px;
     z-index: -100;
-    transform: translate(-50%, -48%);
+    transform: translate(-58%, -48%);
 }
 
 #topbar{
@@ -29,4 +29,10 @@ body {
 
 .scroll{
     padding-top: 100px;
+}
+.c{
+    color: red;
+}
+.d{
+    color:red;
 }

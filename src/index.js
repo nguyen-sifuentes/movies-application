@@ -25,7 +25,7 @@ function loaded() {
     $('#movieStuff').html('');
     let movie = '';
     movies.forEach(({title, rating, id}) => {
-      movie += `<div class="text-align-center">${title}</div><div class="text-align-center">${rating} stars</div>`;
+      movie += `<div class="text-align-center">${title} - ${rating} ✩</div>`;
     });
     $(movie).appendTo('#movieStuff');
 
@@ -66,13 +66,20 @@ loaded();
 
  });
 
-$('#editSubmit').click(()=> {
-    let typeMovieRating= $('#editRating').val();
-    editMovie(typeMovieRating).then((response)=>{
-        loaded()
-    });
-    console.log("movie edit")
-}).catch(()=> {
-    console.log("error")
+$('#adjustMovie').html("");
+let fixMovie = "<option>pick a movie to edit</option>";
+movies.forEach(({title, id}) => {
+    fixMovie +=`<option value="${id}">${id}: ${title}</option>`;
+});
+$('#adjustMovie').html(fixMovie);
 
+$('#makeChange').on('click', (e) => {
+    e.preventDefault();
+    console.log('pressing the button');
+    let fixMovie = $('#adjustMovie').find(":selected").val();
+    console.log(fixMovie);
+    let newRating = $('#fixRating').find(":selected").val();
+    let newName = $('#fixName').val();
+    adjustMovie(newName,newRating, fixMovie);
+    loaded();
 });

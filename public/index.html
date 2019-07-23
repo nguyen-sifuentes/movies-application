@@ -50,7 +50,7 @@
         <video autoplay id="myVideo" loop muted>
             <source src="Burning.mp4" type="video/mp4">
         </video>
-        <h1 class="text-align-center">Our Movie Database: </h1>
+        <h1 class="text-align-center"><span class="c">C</span>inema <span class="d">D</span>atabase: </h1>
         <div id="moreStuff"></div>
         <div id="movieStuff"><img src="loading.gif">
         </div>
@@ -70,18 +70,20 @@
         </form>
         <br>
         <form>
-            <label for="editMoviesSelect">Change movie rating: </label>
-            <select name="editMovies" id="editMoviesSelect">
+            <label for="adjustMovie">Fix It: </label>
+            <select name="adjust" id="adjustMovie">select a movie to adjust:
             </select>
-            <label for="editRating">Rate It: </label>
-            <select name=“editRating” id="editRating">
+            <label for="fixName"></label>
+            <input id="fixName" type="text" placeholder="Edit Name...">
+            <label for="fixRating">New Rating: </label>
+            <select name=“rating” id="fixRating">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select>
-            <button id="editSubmit" class="btn btn-danger">Change</button>
+            <button id="makeChange" type="button">Change</button>
         </form>
         <br>
         <form>
@@ -93,12 +95,12 @@
     </div>
     <div class="column col-1 scroll">
         <!-- Begin scrolling vertical text  -->
-        <!div style="width: 125px; height: 800px; text-align:left; background: #FFFFFF; padding: 0px;">
-        <marquee onmouseover='this.stop();' onmouseout='this.start();' direction="up" height="125" scrollamount="2">
-            <div id="picture scroll"> <a href="http://www.greengeeks.com/" rel="nofollow" target="_blank"> <img src="star.jpg" width="125" height="125" alt="scrolling vertical image marquee" /> </a></div>
-            <div class="picture scroll"><br/><a href="http://www.kqzyfj.com/click-5065041-11036243" rel="nofollow" target="_blank"><img src="mission.jpeg" width="125" height="125"></a></div>
-            <div class="picture scroll"><br/><a href="http://www.kqzyfj.com/click-5065041-11036243" rel="nofollow" target="_blank"><img src="300.png" width="125" height="125"></a></div>
-            <div class="picture scroll"><br/><a href="http://www.kqzyfj.com/click-5065041-11036243" rel="nofollow" target="_blank"><img src="terminator.jpg" width="125" height="125"></a></div>
+        <!div; text-align:left; background: #FFFFFF; padding: 0px;">
+        <marquee width="300px" onmouseover='this.stop();' onmouseout='this.start();' direction="up" height="125" scrollamount="2">
+            <div id="picture scroll"> <a href="http://www.marvel.com" rel="nofollow" target="_blank"> <img src="star.jpg" width="125" height="125" alt="scrolling vertical image marquee" /> </a></div>
+            <div class="picture scroll"><br/><a href="http:/www.marvel.com" target="_blank"><img src="mission.jpeg" width="125" height="125"></a></div>
+            <div class="picture scroll"><br/><a href="http:/www.marvel.com" target="_blank"><img src="300.png" width="125" height="125"></a></div>
+            <div class="picture scroll"><br/><a href="http:/www.marvel.com" target="_blank"><img src="terminator.jpg" width="125" height="125"></a></div>
         </marquee>
     </div>
     <div class="column col-2">
